@@ -16,3 +16,11 @@ body::after{
 h1{
   font-size: 1.6rem;
 }
+
+ul{
+  margin-block-start: 4rem;
+}
+
+li{
+  font-size: 1.6rem;
+}
