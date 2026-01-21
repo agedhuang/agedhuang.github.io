@@ -2,7 +2,15 @@ body{
   background-color: rgb(91, 8, 8);
   padding-block-start: 3rem;
   padding-inline-start: 3rem;
-  color: rgb(255, 255, 255);
+  color: rgb(241, 229, 229);
+}
+
+body::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(rgb(174, 30, 30), ) ;
 }
 
 h1{
