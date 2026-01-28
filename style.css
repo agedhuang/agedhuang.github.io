@@ -11,6 +11,7 @@
   --second-color: rgb(155, 119, 119);
   --font-color: rgb(241, 229, 229); 
   --gutter: 3rem;
+  --link-fontsize: 1.2rem;
 }
 
 body{
@@ -33,7 +34,7 @@ body::after{
 }
 
 p{
-  font-size: 1.2em;
+  font-size: var(--link-fontsize);
   line-height: 2.4rem;
   max-inline-size: 40rem;
   margin-block-start: 0.4rem;
@@ -64,4 +65,13 @@ div.contact{
   position: absolute;
   bottom: 3rem;
   z-index: 1;
+}
+
+@media (width < 500px){
+  
+  :root {
+    --gutter: 0rem;
+    --link-fontsize: 1rem;
+  }
+
 }
