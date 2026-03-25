@@ -16,11 +16,14 @@
 
 body{
   background-color: var(--web-bg-color);
-  padding-block-start: 3rem;
   padding-inline-start: 3rem;
   color: var(--font-color);
   font-family: "PPFragment", serif;
-  
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 body::after{
@@ -31,6 +34,44 @@ body::after{
   width: 100vw;
   height: 10rem;
   background-image: linear-gradient( rgba(174, 30, 30, 0) 20%, rgb(144, 12, 12)); ;
+}
+
+body > div{
+  flex: 1;
+}
+
+.left-side{
+  padding-block-start: 3rem;
+}
+
+.right-side{
+  padding-block-start: -3rem;
+}
+
+.right-side img{
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+/* hide the images by default, and only show the one that corresponds to the hovered link */
+body:has(li:nth-child(1):hover) #manuscript {
+  display: block;
+}
+
+body:has(li:nth-child(2):hover) #anti-grid {
+  display: block;
+}
+
+body:has(li:nth-child(3):hover) #binding {
+  display: block;
+}
+
+body:has(li:nth-child(4):hover) #time {
+  display: block;
 }
 
 p{
@@ -44,6 +85,8 @@ p{
 h1{
   font-size: 2rem;
 }
+
+
 
 ul{
   margin-block-start: 4rem;
