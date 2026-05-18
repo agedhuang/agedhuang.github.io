@@ -11,7 +11,7 @@
   --second-color: rgb(155, 119, 119);
   --font-color: rgb(241, 229, 229); 
   --gutter: 3rem;
-  --link-fontsize: 1.2rem;
+  --link-fontsize: 1.4rem;
 }
 
 body{
@@ -46,36 +46,28 @@ body > div{
 
 .right-side{
   padding-block-start: -3rem;
+  position: relative;
+  /* overflow: hidden; */
 }
 
 .right-side img{
   display: none;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;        
+  max-width: 100%;       
+  max-height: 90%; 
   object-fit: cover;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -50%);
   z-index: 2;
+
 }
 
-/* hide the images by default, and only show the one that corresponds to the hovered link */
-body:has(li:nth-child(1):hover) #manuscript {
-  display: block;
-}
-
-body:has(li:nth-child(2):hover) #anti-grid {
-  display: block;
-}
-
-body:has(li:nth-child(3):hover) #binding {
-  display: block;
-}
-
-body:has(li:nth-child(4):hover) #time {
-  display: block;
-}
 
 p{
-  font-size: var(--link-fontsize);
+  font-size: 1.2rem;
   line-height: 2.4rem;
   max-inline-size: 40rem;
   margin-block-start: 0.4rem;
@@ -95,7 +87,7 @@ ul{
 
 li{
   margin-block: 1.6rem;
-  font-size: 1.4rem;
+  font-size: var(--link-fontsize);
 }
 
 li:hover{
@@ -110,11 +102,52 @@ div.contact{
   z-index: 1;
 }
 
-@media (width < 500px){
-  
-  :root {
-    --gutter: 0rem;
-    --link-fontsize: 1rem;
+@media (width >1050px){
+  /* hide the images by default, and only show the one that corresponds to the hovered link */
+  body:has(li:nth-child(1):hover) #manuscript {
+    display: block;
   }
 
+  body:has(li:nth-child(2):hover) #anti-grid {
+    display: block;
+  }
+
+  body:has(li:nth-child(3):hover) #binding {
+    display: block;
+  }
+
+  body:has(li:nth-child(4):hover) #time {
+    display: block;
+  }
+
+  body:has(li:nth-child(5):hover) #torrent {
+    display: block;
+  }
+}
+
+
+@media (width < 1050px){
+  :root {
+    --gutter: 0rem;
+    --link-fontsize: 1.2rem;
+  }
+
+  body{
+    flex-direction: column;
+    /* padding: 0; */
+  }
+
+  .right-side img{
+    display: none;
+    width: auto;
+    height: auto;        
+    max-width: 40%;       
+    max-height: 90%; 
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -0%);
+    z-index: 2;
+  }
 }
